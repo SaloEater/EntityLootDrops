@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "package": "net.poe.entitylootdrops.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "LootPoolSingletonContainerAccessor",
+    "LootTableMixin",
+    "LootTableParserMixin",
+    "SetItemCountFunctionMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

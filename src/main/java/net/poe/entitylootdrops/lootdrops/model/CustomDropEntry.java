@@ -134,4 +134,8 @@ public class CustomDropEntry {
     public boolean hasRequiredDimension() { return requiredDimension != null && !requiredDimension.isEmpty(); }
     public boolean hasRequiredBiome() { return requiredBiome != null && !requiredBiome.isEmpty(); }
     public boolean hasCommandCoolDown() { return commandCoolDown > 0; }
+
+    public boolean hasItem() {
+        return itemId != null && !itemId.isEmpty();
+    }
 }

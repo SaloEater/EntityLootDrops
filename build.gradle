@@ -2,6 +2,7 @@ plugins {
     id 'eclipse'
     id 'maven-publish'
     id 'net.minecraftforge.gradle' version '[6.0,6.2)'
+    id 'org.spongepowered.mixin' version '0.7.+'
 }
 
 version = '2.6'
@@ -50,10 +51,25 @@ repositories {
     maven {
         url = "https://maven.blamejared.com"
     }
+    maven {
+        name "curseMaven"
+        url "https://cursemaven.com"
+    }
 }
+
+mixin {
+    config 'entitylootdrops.mixins.json'
+
+    debug.verbose = true
+    debug.export = true
+}
+
 
 dependencies {
     minecraft 'net.minecraftforge:forge:1.20.1-47.3.0'
+    implementation fg.deobf("curse.maven:emiloot-681783:6449092")
+
+    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 }
 
 tasks.named('jar', Jar).configure {
